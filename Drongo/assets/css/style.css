@@ -130,7 +130,7 @@ button:focus {
 
 img {
   height: auto;
-  max-width: 100%;
+  max-width: 250%;
 }
 
 .item-image {
@@ -4519,7 +4519,7 @@ button {
   left: 0px;
   right: 0px;
   z-index: 999;
-  padding: 60px 0px;
+  padding: 45px 0px;
   position: absolute;
 }
 .coming-soon-page .header-section {
@@ -4530,8 +4530,7 @@ button {
 }
 
 .comingsoon-section {
-  background-size: auto;
-  background-position: right bottom;
+  background-position: center left;
 }
 .comingsoon-section .comingsoon-content .title-text {
   font-size: 32px;
@@ -6864,7 +6863,6 @@ button {
   /* home - end */
   /* coming soon - start */
   .comingsoon-section {
-    background-position: right 45% bottom;
   }
 
   /* coming soon - end */
