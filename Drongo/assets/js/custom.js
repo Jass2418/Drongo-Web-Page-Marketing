@@ -587,8 +587,8 @@
   function init_gmap() {
     if ( typeof google == 'undefined' ) return;
     var options = {
-      center: [1.2960841, 103.8458455],
-      zoom: 14,
+      center: [25.664047, -100.300548],
+      zoom: 15,
       styles: [
       {elementType: 'geometry', stylers: [{color: '#eaeaea'}]},
       {elementType: 'labels.text.stroke', stylers: [{color: '#ffffff'}]},
@@ -687,8 +687,8 @@
         options: options
       },
       marker: {
-        latLng: [1.2960841, 103.8458455],
-        // options: { icon: 'assets/img/map.png' }
+        latLng: [25.664047, -100.300548],
+        // options: { icon:  'assets/images/logo/favicon.png' }
       }
     });
   }
@@ -696,5 +696,68 @@
   // google map - end
   // --------------------------------------------------
 
+  // smtp - start
+  // --------------------------------------------------
+
+  $("#success").hide();
+  $("#error").hide();
+
+  if ($("#contact-form").length) {
+    $("#contact-form").validate({
+        rules: {
+            name: {
+                required: true,
+                minlength: 2
+            },
+
+            email: "required",
+        },
+
+        messages: {
+            name: "Ingrese su Nombre y Apellido",
+            email: "Ingrese su Correo Electrónico"
+        },
+
+        submitHandler: function (form) {
+          if(!form.comment.value)
+            form.comment.value= "";
+          if(!form.company.value)
+            form.company.value= "Ninguna";
+
+            Email.send({
+                SecureToken:"80f38695-2036-45fb-9ae7-0ff340ef171c",
+                To : 'contacto@drongo.com.mx',
+                From : "no-reply@drongo.com.mx",
+                Subject : "Solicitud de Drongo GPS System",
+                Body : "Hola mi nombre es " + 
+                form.name.value + " Empresa: " + 
+                form.company.value + " Email: " + form.email.value + '\n' + form.comment.value
+            }).then(
+              message => checkSMTP(message,form)
+            );
+            return false;
+        }
+    });
+}
+
+function checkSMTP(message,form){
+  if(message=="OK"){
+      $( "#loader").hide();
+      $( "#success").slideDown( "slow" );
+      setTimeout(function() {
+      $( "#success").slideUp( "slow" );
+      }, 3000);
+      form.reset();
+  }
+
+  else{
+      console.log(message);
+      $( "#loader").hide();
+      $( "#error").slideDown( "slow" );
+      setTimeout(function() {
+      $( "#error").slideUp( "slow" );
+      }, 3000);
+  }
+}
 
 })(jQuery);

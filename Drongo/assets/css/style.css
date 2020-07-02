@@ -646,7 +646,7 @@ strong, span, small, label, i {
 }
 
 .sec-ptb-100 {
-  padding: 100px 0px;
+  padding: 100px 36px;
 }
 
 .mrl--60 {
@@ -1042,7 +1042,7 @@ button {
   display: block;
   line-height: 1;
   position: absolute;
-  background-color: #000000;
+  background-color: #FFFFFF;
   transition: all 0.2s ease-in-out;
 }
 .header-section .menu-btn span:nth-child(1) {
@@ -1119,20 +1119,22 @@ button {
 }
 .header-section .main-menu > ul > li > a {
   display: block;
+  text-shadow: 1px 1px black;
   font-size: 14px;
   font-weight: 500;
   position: relative;
-  color: #000000;
+  color: #FFFFFF;
 }
 .header-section .main-menu > ul > li > a:before {
   width: 0px;
+  text-shadow: 1px 1px black;
   left: auto;
   right: 0px;
   bottom: 0px;
   height: 1px;
   content: "";
   position: absolute;
-  background: #000000;
+  background: #FFFFFF;
   transition: width 0.3s linear;
 }
 .header-section .main-menu > ul > li:hover > a:before, .header-section .main-menu > ul > li.active > a:before {
@@ -1145,7 +1147,7 @@ button {
 }
 .header-section .main-menu > ul > .menu-item-has-child > a {
   position: relative;
-  padding-right: 16px;
+  /* padding-right: 16px; */
 }
 .header-section .main-menu > ul > .menu-item-has-child > a:after {
   top: 6.6px;
@@ -1153,14 +1155,12 @@ button {
   line-height: 1;
   color: #000000;
   font-size: 12px;
-  content: "";
   font-weight: 400;
   position: absolute;
   transition: all 0.3s ease-in-out;
   font-family: "Font Awesome 5 Pro";
 }
 .header-section .main-menu > ul > .menu-item-has-child:hover > a:after {
-  content: "";
   transform: rotate(360deg);
 }
 .header-section .main-menu > ul > .menu-item-has-child .submenu {
@@ -1386,7 +1386,7 @@ button {
   right: 0px;
   z-index: 999;
   position: fixed;
-  background-color: #ffffff;
+  background-color: #000000;
   box-shadow: 0px 0px 18px 1px rgba(0, 0, 0, 0.1);
   animation: 0.5s ease-in-out 0s normal none 1 running fadeInDown;
 }
@@ -2822,6 +2822,7 @@ button {
 }
 .testimonial-fullwidth p {
   font-size: 24px;
+  font-weight: 500;
   color: #000000;
   font-family: "Montserrat", sans-serif;
 }
@@ -4338,6 +4339,20 @@ button {
 }
 .contact-section.text-white .submit-btn-icon {
   color: #ffffff;
+}
+
+.contact-success{
+  text-align: center;
+  font-size: 18px;
+}
+
+.contact-error{
+  text-align: center;
+  font-size: 18px;
+}
+
+.send-button{
+  margin-bottom: 20px;
 }
 
 /* contact section - end */
@@ -7297,7 +7312,7 @@ button {
 @media screen and (max-width: 991px) {
   /* global - start */
   .sec-ptb-100 {
-    padding: 70px 0px;
+    padding: 70px 36px;
   }
 
   .mb-100 {
@@ -7343,7 +7358,7 @@ button {
   }
 
   .header-section .social-links-text {
-    display: none;
+    display: block;
   }
 
   .home-portfolio .header-section .order-first {
@@ -8285,7 +8300,7 @@ button {
   /* header - end */
   /* footer - start */
   .footer-section {
-    text-align: center;
+    text-align: left;
   }
 
   .footer-section .useful-links,
@@ -8925,7 +8940,7 @@ button {
   }
 
   .sec-ptb-100 {
-    padding: 50px 0px;
+    padding: 50px 36px;
   }
 
   .mb-100 {
@@ -10919,3 +10934,26 @@ button {
 /* ====================================================================================================
 9 - media screen and (max-width: 320px) - end
 ==================================================================================================== */
+
+/* ====================================================================================================
+10 - Custom Classes - start
+==================================================================================================== */
+.white-text{
+  color: white;
+}
+
+.font-weight-500{
+  font-weight: 500;
+}
+
+.black-text{
+  color: black;
+}
+
+.shadow-text{
+  text-shadow: 2px 2px black;
+}
+
+.white-shadow{
+  text-shadow: 1px 1px white;
+}
