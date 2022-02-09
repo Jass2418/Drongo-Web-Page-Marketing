@@ -43,7 +43,7 @@
             }(),
             map: {
                 mapTypeId: q.MapTypeId.ROADMAP,
-                center: [25.664063, -100.300548],
+                center: [25.649704 -100.356411],
                 zoom: 2
             },
             overlay: {
